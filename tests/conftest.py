@@ -57,5 +57,6 @@ def conn(pg_url):
     with psycopg.connect(pg_url, autocommit=True) as c:
         c.execute("DROP SCHEMA public CASCADE; CREATE SCHEMA public")
         c.execute(DDL_SUMBER_UJI)
-        c.execute((SRC / "skema.sql").read_text())
+        for f in sorted(SRC.glob("skema*.sql")):
+            c.execute(f.read_text())
         yield c
