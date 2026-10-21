@@ -5,6 +5,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/id-ID/1.1.0/). Versi mengi
 ## [Belum dirilis]
 
 ### Ditambahkan
+- PWN-DATA-004: agregat serapan mingguan (serapan, rasio, waste, nilai hemat; per keluarga + program) ke `agregat_serapan_mingguan`/`agregat_serapan_program`, CLI `--serapan-mingguan` (ADR-0004).
 - PWN-DATA-002: pipa `sinyal.pedaree.v1` tiap 15 menit per keluarga ke `sinyal_pedaree`, idempoten per periode (ADR-0002); uji pytest dengan Postgres sementara.
 
 ### Diubah
