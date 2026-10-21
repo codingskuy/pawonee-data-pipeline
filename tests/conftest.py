@@ -22,6 +22,11 @@ CREATE TABLE riwayat_masak (
     tanggal DATE NOT NULL,
     dibuat_pada TIMESTAMPTZ NOT NULL DEFAULT now()
 );
+
+CREATE TABLE profil_keluarga (
+    keluarga_id TEXT PRIMARY KEY,
+    dibuat_pada TIMESTAMPTZ NOT NULL DEFAULT now()
+);
 """
 
 
