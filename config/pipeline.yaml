@@ -3,10 +3,12 @@ nama: pawonee-ke-pedaree
 jadwal: "*/15 * * * *"
 sumber:
   database_url_env: DATABASE_URL
-  tabel: [resep, preferensi]
+  tabel: [riwayat_masak]
 keluaran:
   topik: sinyal.pedaree.v1
   tabel: sinyal_pedaree
+  versi_kontrak: v1
+  idempoten_per: [keluarga_id, periode_mulai]
 aturan:
   wajib_validasi_skema: true
   skema: ../pawonee-ai-models/models/schema.json
