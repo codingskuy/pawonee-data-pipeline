@@ -1,0 +1,38 @@
+{
+  "versi_kontrak": "v1",
+  "status": "terkunci",
+  "aturan_perubahan": "Dilarang mengedit berkas ini. Event baru atau perubahan skema = berkas versi baru (pawonee-event-v2.json) + ADR + dual-read 30 hari (KONTEKS-LINTAS-DIVISI 9).",
+  "amplop": {
+    "event_id": "evt_YYYYMMDD_NNNNNN (kunci idempoten; duplikat diabaikan)",
+    "event_type": "salah satu kunci 'event' di bawah",
+    "schema_version": "v1",
+    "source": "internal",
+    "keluarga_id": "KEL-NNNN",
+    "occurred_at": "RFC3339 UTC",
+    "received_at": "RFC3339 UTC",
+    "batch_id": "string, boleh null",
+    "payload": "objek sesuai event"
+  },
+  "event": {
+    "rekomendasi.dihitung": {
+      "konsumen": ["internal"],
+      "payload": {"jumlah_item": "int", "mode_tanpa_stok": "bool"}
+    },
+    "resep.dimasak": {
+      "konsumen": ["internal"],
+      "payload": {"resep_id": "str", "jiwa": "int", "gram_g2_terserap": "int", "tanggal": "str"}
+    },
+    "serapan.dihitung": {
+      "konsumen": ["internal"],
+      "payload": {"minggu_mulai": "str", "serapan_g2_gram": "int", "waste_dapur_gram": "int", "rasio_serapan": "num?"}
+    },
+    "profil.disimpan": {
+      "konsumen": ["internal"],
+      "payload": {"versi_profil": "int"}
+    },
+    "sinyal.diterbitkan": {
+      "konsumen": ["pedaree", "internal"],
+      "payload": {"sinyal_event_id": "str", "periode_mulai": "str", "periode_selesai": "str", "gram_g2_terserap_total": "int"}
+    }
+  }
+}
